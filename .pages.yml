@@ -1,0 +1,171 @@
+# Pages CMS configuration — defines the editing form Raj sees.
+# Design lives in src/. This file describes content only.
+
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: content/site.json
+    fields:
+      - name: site
+        label: Site settings
+        type: object
+        fields:
+          - { name: brand, label: Brand name, type: string }
+          - { name: logo, label: Logo image, type: image }
+          - { name: page_title, label: Browser tab title, type: string }
+          - { name: meta_description, label: Google description, type: text }
+          - { name: og_title, label: Social share title, type: string }
+          - { name: og_description, label: Social share description, type: text }
+          - { name: og_image, label: Social share image, type: image }
+          - { name: footer_line, label: Footer line, type: string }
+          - { name: form_url, label: Form link (JotForm), type: string }
+
+      - name: nav
+        label: Top menu links
+        type: list
+        fields:
+          - { name: label, label: Text, type: string }
+          - { name: href, label: Link, type: string }
+      - { name: nav_cta_label, label: Menu button text, type: string }
+      - { name: nav_cta_href, label: Menu button link, type: string }
+
+      - name: hero
+        label: "Hero — top of page"
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label above headline, type: string }
+          - { name: heading_before, label: "Headline (part 1)", type: string }
+          - { name: heading_emphasis, label: "Headline (green part)", type: string }
+          - { name: heading_after, label: "Headline (part 2)", type: string }
+          - { name: lede_1, label: First paragraph, type: text }
+          - { name: lede_2, label: Second paragraph, type: text }
+          - { name: cta_primary_label, label: Main button text, type: string }
+          - { name: cta_primary_href, label: Main button link, type: string }
+          - { name: cta_secondary_label, label: Second button text, type: string }
+          - { name: cta_secondary_href, label: Second button link, type: string }
+          - { name: image, label: Hero image, type: image }
+          - { name: image_alt, label: Hero image description, type: string }
+          - { name: caption, label: Caption under image, type: string }
+
+      - name: problem
+        label: "01 — The problem"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Intro paragraph, type: text }
+          - name: cards
+            label: Cards
+            type: list
+            fields:
+              - { name: tag, label: Small label, type: string }
+              - { name: title, label: Card title, type: string }
+              - { name: body, label: Card text, type: text }
+
+      - name: get
+        label: "02 — What you get"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Intro paragraph, type: text }
+          - name: cards
+            label: Cards
+            type: list
+            fields:
+              - { name: tag, label: Small label, type: string }
+              - { name: title, label: Card title, type: string }
+              - { name: body, label: Card text, type: text }
+
+      - name: measure
+        label: "03 — What we measure"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Intro paragraph, type: text }
+          - name: dims
+            label: The seven dimensions
+            type: list
+            fields:
+              - { name: title, label: Dimension, type: string }
+              - { name: body, label: Description, type: text }
+
+      - name: how
+        label: "04 — How it works"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: steps
+            label: Steps
+            type: list
+            fields:
+              - { name: title, label: Step title, type: string }
+              - { name: body, label: Step text, type: text }
+          - { name: note, label: Note under the steps, type: text }
+
+      - name: ecosystem
+        label: "05 — Where candidates come from"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Intro paragraph, type: text }
+          - { name: image, label: Image, type: image }
+          - { name: image_alt, label: Image description, type: string }
+          - name: chips
+            label: Topic chips
+            type: list
+            fields:
+              - { name: chip, label: Chip text, type: string }
+
+      - name: young
+        label: "06 — For young adults"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Body text, type: text }
+          - { name: cta_label, label: Button text, type: string }
+          - { name: cta_href, label: Button link, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: image_alt, label: Image description, type: string }
+
+      - name: channels
+        label: "07 — Where we post"
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: kicker, label: Intro paragraph, type: text }
+          - name: items
+            label: Channels
+            type: list
+            fields:
+              - { name: tag, label: Status (Live / Launching), type: string }
+              - { name: title, label: Channel name, type: string }
+              - { name: body, label: Description, type: text }
+              - { name: url, label: Link, type: string }
+
+      - name: final
+        label: Closing call to action
+        type: object
+        fields:
+          - { name: eyebrow, label: Section label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: body, label: Body text, type: text }
+          - { name: cta_label, label: Button text, type: string }
+          - { name: cta_href, label: Button link, type: string }
+
+      - name: social
+        label: Social links
+        type: list
+        fields:
+          - { name: label, label: Platform, type: string }
+          - { name: url, label: Link, type: string }

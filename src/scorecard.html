@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee Development Scorecard — Thrive 360</title>
+<meta name="description" content="Five questions, about three minutes. A one-page read on where your management hours are going, and which of four problems is costing you most.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0e1512;--paper:#f7f5ef;--green:#4fbf8b;--gold:#c9a24a;--line:rgba(247,245,239,.14)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.12;letter-spacing:-.02em;margin:0}
+  .top{padding:52px 0 0;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:Fraunces,serif;letter-spacing:.3em;text-transform:uppercase;font-size:.95rem;text-decoration:none;color:var(--paper)}
+  .eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green);margin:0 0 14px}
+  h1{font-size:clamp(2rem,4.6vw,2.9rem);margin-top:8px}
+  .lede{color:rgba(247,245,239,.66);margin:16px 0 0;max-width:56ch}
+  form{margin:44px 0 60px}
+  fieldset{border:0;border-top:1px solid var(--line);padding:26px 0 6px;margin:0}
+  legend{padding:0 12px 0 0;font-family:Fraunces,serif;font-size:1.12rem;color:var(--paper);max-width:52ch}
+  .opt{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:1px solid var(--line);border-radius:11px;margin:8px 0;cursor:pointer;transition:.15s;font-size:.95rem;color:rgba(247,245,239,.78)}
+  .opt:hover{border-color:rgba(79,191,139,.5);background:rgba(79,191,139,.05)}
+  .opt input{margin:3px 0 0;accent-color:#4fbf8b;flex:0 0 auto}
+  .opt.picked{border-color:var(--green);background:rgba(79,191,139,.09);color:var(--paper)}
+  .cta{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  button{font-family:Inter;font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:999px;border:0;background:var(--green);color:#08130d;cursor:pointer}
+  button:hover{background:#5fd39b}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  .note{font-size:.8rem;color:rgba(247,245,239,.4)}
+  #result{display:none;border:1px solid rgba(79,191,139,.35);border-radius:18px;padding:32px;background:linear-gradient(180deg,rgba(79,191,139,.09),rgba(247,245,239,.02));margin-bottom:60px}
+  #result.show{display:block}
+  .score{font-family:Fraunces,serif;font-size:3.2rem;line-height:1}
+  .band{display:inline-block;margin-top:10px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,74,.45);border-radius:999px;padding:6px 14px}
+  .res-block{margin-top:26px;border-top:1px solid var(--line);padding-top:20px}
+  .res-block h3{font-size:1.05rem;margin-bottom:6px;color:var(--green)}
+  .res-block p{margin:0;color:rgba(247,245,239,.72);font-size:.95rem}
+  footer{padding:34px 0 60px;color:rgba(247,245,239,.4);font-size:.82rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line)}
+  footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/">Thrive 360</a>
+    <a class="brand" href="/" style="font-size:.75rem;color:rgba(247,245,239,.5)">← back</a>
+  </div>
+
+  <header style="padding:44px 0 0">
+    <p class="eyebrow">Free · about three minutes</p>
+    <h1>Employee Development Scorecard</h1>
+    <p class="lede">Five questions. One page back. It tells you which of four problems is eating your week — and what usually fixes it.</p>
+  </header>
+
+  <form id="sc">
+    <fieldset data-dim="A">
+      <legend>1. When work lands on your team without instructions, what usually happens?</legend>
+      <label class="opt"><input type="radio" name="q1" value="3"> Someone works it out and starts</label>
+      <label class="opt"><input type="radio" name="q1" value="1"> Someone asks me for instructions</label>
+      <label class="opt"><input type="radio" name="q1" value="0"> It sits until someone notices</label>
+    </fieldset>
+
+    <fieldset data-dim="B">
+      <legend>2. How often does work fall between two people?</legend>
+      <label class="opt"><input type="radio" name="q2" value="3"> Rarely — people close the loop themselves</label>
+      <label class="opt"><input type="radio" name="q2" value="1"> Sometimes, and we catch it in a meeting</label>
+      <label class="opt"><input type="radio" name="q2" value="0"> Weekly. Handoffs are where things die</label>
+    </fieldset>
+
+    <fieldset data-dim="C">
+      <legend>3. If you were out for two weeks, what would happen?</legend>
+      <label class="opt"><input type="radio" name="q3" value="3"> The work continues; a couple of decisions wait</label>
+      <label class="opt"><input type="radio" name="q3" value="1"> It slows down but survives</label>
+      <label class="opt"><input type="radio" name="q3" value="0"> Something important would break</label>
+    </fieldset>
+
+    <fieldset data-dim="C">
+      <legend>4. How much of your week goes to supervising work you shouldn't have to?</legend>
+      <label class="opt"><input type="radio" name="q4" value="3"> Under 10%</label>
+      <label class="opt"><input type="radio" name="q4" value="2"> 10–25%</label>
+      <label class="opt"><input type="radio" name="q4" value="1"> 25–50%</label>
+      <label class="opt"><input type="radio" name="q4" value="0"> Most of it</label>
+    </fieldset>
+
+    <fieldset data-dim="D">
+      <legend>5. If your best deputy left tomorrow, who takes over?</legend>
+      <label class="opt"><input type="radio" name="q5" value="3"> A named person, already doing part of it</label>
+      <label class="opt"><input type="radio" name="q5" value="1"> A named person, not ready yet</label>
+      <label class="opt"><input type="radio" name="q5" value="0"> Nobody I'd trust yet</label>
+    </fieldset>
+
+    <div class="cta">
+      <button type="submit" id="go" disabled>Show my result</button>
+      <span class="note">Nothing is sent anywhere. This computes in your browser.</span>
+    </div>
+  </form>
+
+  <section id="result">
+    <div class="score"><span id="scoreNum">0</span> <span style="font-size:1.1rem;color:rgba(247,245,239,.5)">/ 15</span></div>
+    <div class="band" id="bandName">—</div>
+    <div class="res-block"><h3>What that means</h3><p id="bandText">—</p></div>
+    <div class="res-block"><h3>Your biggest cost right now</h3><p id="dimText">—</p></div>
+    <div class="res-block"><h3>What we'd do first</h3><p id="fixText">—</p></div>
+    <div class="cta" style="margin-top:28px">
+      <a href="https://form.jotform.com/263223546098057" style="text-decoration:none"><button type="button">Send me the one-page version</button></a>
+    </div>
+    <p class="note" style="margin-top:14px">The JotForm copy collects your details so I can send the written summary and answer questions.</p>
+  </section>
+
+  <footer>
+    <div>Thrive 360 · Sarasota &amp; Venice, Florida</div>
+    <div><a href="/">thrive-movement.surge.sh</a></div>
+  </footer>
+</div>
+
+<script>
+const BANDS = [
+  {min:13, name:"Solid", text:"Your team carries work without you. The next gain is depth, not repair: build a second person behind your strongest deputy."},
+  {min:9,  name:"Strained", text:"One weak link is absorbing your week. Most employers at this level lose five to eight management hours a week to the dimension below."},
+  {min:5,  name:"Dependent", text:"You are the operating system. The fix isn't more supervision — it's one named owner per recurring piece of work, with a written handoff."},
+  {min:0,  name:"Fragile", text:"More than one thing breaks if you step away. Start with a single weekly deliverable owned by one person, and a second person trained on it."}
+];
+const DIMS = {
+  A:{label:"A — Initiative", text:"People wait to be told what to do next. It looks like laziness and is usually missing ownership: nobody has been handed something and told it is theirs."},
+  B:{label:"B — Communication", text:"Work falls between people. Handoffs have no owner, so the gap is nobody's job until it becomes yours."},
+  C:{label:"C — Supervision time", text:"Nothing moves unless you're in the room. Your week is being spent as the routing layer between people who should be routing themselves."},
+  D:{label:"D — Leadership readiness", text:"Nobody is ready to take over. That's not a hiring problem yet — it's a development problem you can still fix internally."}
+};
+const FIXES = {
+  A:{label:"Give one piece of work a name, not a task", text:"Hand one recurring deliverable to one person, in writing, with a date — and then don't chase it. The first week will be uncomfortable. That discomfort is the training."},
+  B:{label:"Close the loop in public", text:"Pick the handoff that fails most often and name an owner for each side of it. A five-minute written handoff beats another status meeting."},
+  C:{label:"Take yourself out of the routing", text:"For one week, every request goes to the owner of that work, not to you. If there's no owner, that's the list of jobs to assign."},
+  D:{label:"Build the second person, not the hero", text:"Choose your strongest deputy and give them part of your job this month — with a real decision to make and the authority to make it."}
+};
+const form = document.getElementById('sc');
+const go = document.getElementById('go');
+const fieldsets = [...form.querySelectorAll('fieldset')];
+
+form.addEventListener('change', e => {
+  const fs = e.target.closest('fieldset');
+  fs.querySelectorAll('.opt').forEach(l => l.classList.remove('picked'));
+  e.target.closest('.opt').classList.add('picked');
+  go.disabled = !fieldsets.every(f => f.querySelector('input:checked'));
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  let total = 0;
+  const scored = fieldsets.map(fs => {
+    const picked = fs.querySelector('input:checked');
+    const v = picked ? Number(picked.value) : 0;
+    total += v;
+    return {dim: fs.dataset.dim, v};
+  });
+  const band = BANDS.find(b => total >= b.min);
+  const weakest = scored.slice().sort((x, y) => x.v - y.v)[0];
+  document.getElementById('scoreNum').textContent = total;
+  document.getElementById('bandName').textContent = band.name;
+  document.getElementById('bandText').textContent = band.text;
+  document.getElementById('dimText').textContent = DIMS[weakest.dim].label + ". " + DIMS[weakest.dim].text;
+  document.getElementById('fixText').textContent = FIXES[weakest.dim].text;
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  r.scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+</body>
+</html>
