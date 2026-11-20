@@ -3,7 +3,7 @@
 
 media:
   input: assets
-  output: /assets
+  output: assets
 
 content:
   - name: homepage
