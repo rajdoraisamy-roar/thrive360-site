@@ -1,12 +1,12 @@
 {
   "site": {
     "brand": "Thrive 360",
-    "logo": "assets/logo.png",
+    "logo": "/assets/logo.png",
     "page_title": "Thrive 360 — Hire for judgment, not a résumé",
-    "meta_description": "Thrive 360 is a Sarasota and Venice, Florida program that places young adults on real work, documents how they perform, and hands employers evidence before the interview.",
-    "og_title": "You're hiring for judgment. Nobody's teaching.",
+    "meta_description": "Thrive 360 places young adults on real work, documents how they perform, and hands employers evidence before the interview.",
+    "og_title": "You're hiring for judgment. But nobody's teaching that anymore.",
     "og_description": "Entry-level work used to build judgment. It got automated. Thrive 360 gives you the record instead.",
-    "og_image": "assets/hero-evidence.png",
+    "og_image": "/assets/hero-evidence.png",
     "footer_line": "Thrive 360 · Sarasota & Venice, Florida",
     "form_url": "https://form.jotform.com/263217925128055"
   },
@@ -53,7 +53,7 @@
     "cta_primary_href": "#start",
     "cta_secondary_label": "What we measure",
     "cta_secondary_href": "#measure",
-    "image": "assets/hero-evidence.png",
+    "image": "/assets/hero-evidence.png",
     "image_alt": "A candidate portfolio page showing scored evidence across seven dimensions",
     "caption": "Every candidate arrives with a record, not a promise"
   },
@@ -163,7 +163,7 @@
     "eyebrow": "05 — Where the candidates come from",
     "heading": "They're already doing the work — for a cause they chose.",
     "kicker": "Thrive runs specific local initiatives: conservation, elections, land use, education, family, health, governance. People join because they care about one of them. The work is real, the accountability is real, and the record we hand you comes out of it.",
-    "image": "assets/ecosystem.png",
+    "image": "/assets/ecosystem.png",
     "image_alt": "Thrive ecosystem: nature, elections, candidates, land use, education, family, health, governance",
     "chips": [
       "Nature",
@@ -182,7 +182,7 @@
     "kicker": "A real conversation, not a form. Then one piece of work that's genuinely yours, a mentor who has done it before, and a record of what you can do that follows you when you go for the job. You don't need a résumé to start.",
     "cta_label": "Talk to us — 30 minutes",
     "cta_href": "https://form.jotform.com/263217925128055",
-    "image": "assets/candidates.png",
+    "image": "/assets/candidates.png",
     "image_alt": "A young adult working on a real assignment with a mentor"
   },
   "channels": {
