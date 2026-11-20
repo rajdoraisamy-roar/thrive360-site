@@ -27,7 +27,8 @@ content:
 
       - name: nav
         label: Top menu links
-        type: list
+        type: object
+        list: true
         fields:
           - { name: label, label: Text, type: string }
           - { name: href, label: Link, type: string }
@@ -61,7 +62,8 @@ content:
           - { name: kicker, label: Intro paragraph, type: text }
           - name: cards
             label: Cards
-            type: list
+            type: object
+            list: true
             fields:
               - { name: tag, label: Small label, type: string }
               - { name: title, label: Card title, type: string }
@@ -76,7 +78,8 @@ content:
           - { name: kicker, label: Intro paragraph, type: text }
           - name: cards
             label: Cards
-            type: list
+            type: object
+            list: true
             fields:
               - { name: tag, label: Small label, type: string }
               - { name: title, label: Card title, type: string }
@@ -91,7 +94,8 @@ content:
           - { name: kicker, label: Intro paragraph, type: text }
           - name: dims
             label: The seven dimensions
-            type: list
+            type: object
+            list: true
             fields:
               - { name: title, label: Dimension, type: string }
               - { name: body, label: Description, type: text }
@@ -104,7 +108,8 @@ content:
           - { name: heading, label: Heading, type: string }
           - name: steps
             label: Steps
-            type: list
+            type: object
+            list: true
             fields:
               - { name: title, label: Step title, type: string }
               - { name: body, label: Step text, type: text }
@@ -121,9 +126,8 @@ content:
           - { name: image_alt, label: Image description, type: string }
           - name: chips
             label: Topic chips
-            type: list
-            fields:
-              - { name: chip, label: Chip text, type: string }
+            type: string
+            list: true
 
       - name: young
         label: "06 — For young adults"
@@ -146,7 +150,8 @@ content:
           - { name: kicker, label: Intro paragraph, type: text }
           - name: items
             label: Channels
-            type: list
+            type: object
+            list: true
             fields:
               - { name: tag, label: Status (Live / Launching), type: string }
               - { name: title, label: Channel name, type: string }
@@ -165,7 +170,8 @@ content:
 
       - name: social
         label: Social links
-        type: list
+        type: object
+        list: true
         fields:
           - { name: label, label: Platform, type: string }
           - { name: url, label: Link, type: string }
